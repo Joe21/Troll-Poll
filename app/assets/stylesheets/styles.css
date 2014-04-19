@@ -1,0 +1,54 @@
+body {
+	background-color: black;
+	color: white; 
+}
+
+#header {
+	border-bottom: 3px solid yellow;
+	color: black;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.2em;
+}
+
+#header a {
+	color: black;
+}
+
+#header a:hover {
+	text-shadow: 2px 2px yellow;
+}
+
+#no-border {
+	border-radius: 0;
+}
+
+#host-header {
+	color: black;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#host-sidebar {
+	color: black;
+	padding-top: 5px;
+}
+
+#host-sidebar li {
+	border-bottom: 1px solid black;
+}
+
+#host-right {
+	float: right;
+}
+
+#footclan {
+	bottom: 0;
+	position: fixed;
+	right: 0;
+	padding-right: 10px;
+}
+
+.view-container {
+	background-color: white;
+	color: black;
+}
