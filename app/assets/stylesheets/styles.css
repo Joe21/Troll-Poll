@@ -1,7 +1,6 @@
 body {
 	background-color: black;
 	color: white;
-	padding-bottom: 40px; 
 }
 
 #header {
@@ -67,7 +66,8 @@ body {
 	background-color: white;
 	border-radius: 3px;
 	color: black;
-	padding: 0 5px;
+	padding: 0 5px 20px 5px;
+	margin-bottom: 20px;
 	text-align: center;
 	width: 500px;
 }
