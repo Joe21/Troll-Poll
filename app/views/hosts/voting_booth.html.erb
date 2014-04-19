@@ -1,0 +1,14 @@
+<div class="view-container">
+	<h3 class="title"><em>Vote for your favorite Best Damn Nerd Show Host!</em></h3>
+<% @hosts.each do |host| %>
+	<div id="host-container">
+		<strong><%= host.name %></strong><br />
+		<em><%= host.title %></em><br />
+		<img src="<%= host.image %>" />
+		<p></p>
+		<%= button_to "vote", vote_path(host.id), class: "btn btn-info" %>
+		<hr>
+	</div>
+<% end %>
+
+</div>

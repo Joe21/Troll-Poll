@@ -1,5 +1,54 @@
-<div class="view-container">
-
-hello
-
+<div id="chart-container">
+	<h3 class="title">Favorite BDNS Host</h3>
+	<canvas id="chart" height="500" width="500"></canvas>
 </div>
+
+<script>
+var host_names = ["James", "Jeff", "Davis", "Marc"];
+var votes = [];
+
+function fireForEffect() {
+	var request = $.ajax({
+		url: '/',
+		method: 'GET',
+		dataType: 'json',
+		success: function(warhead) {
+			votes = warhead;
+			createBarChart();
+		}
+	})
+}
+
+function createBarChart() {
+
+	// Set data
+	var barChartData = {
+		labels: host_names,
+		datasets: [
+		{
+			fillColor: "rgba(230,230,0,1)",
+			strokeColor: "rgba(0,0,0,1)",
+			data: votes
+		}]
+	};
+
+	// Set Options
+	var barChartOptions = {
+		scaleOverlay: true,
+		scaleLineColor: "rgba(0,0,0,1)",
+		scaleFontColor : "#000000",
+		scaleGridLineColor: "rgba(0,0,0,0.4)",
+		scaleGridLineWidth: 1,
+		barValueSpacing : 2,
+		barDatasetSpacing: 0
+	}
+
+	var ctx = $("#chart").get(0).getContext("2d");
+	var barChart = new Chart(ctx).Bar(barChartData, barChartOptions);
+}
+
+// On Window load
+$(function() {
+	fireForEffect();
+});
+</script>

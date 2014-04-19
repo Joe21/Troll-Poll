@@ -46,10 +46,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">BDNS Poll</a>
+          <div class="brand">BDNS Poll</div>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Hosts", "/path1"  %></li>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Vote", voting_booth_path %></li>
+              <li><%= link_to "BDNS", 'http://bestdamnnerdshow.com', target: "_blank" %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -63,7 +65,7 @@
             <ul class="nav nav-list" >
               <div id="host-header">Votes</div>
 
-              <% @hosts.each do |host| %>
+              <% @ordered_hosts.each do |host| %>
               <li><%= host.name %>: <div id="host-right"><%= host.votes %> votes</div>
               </li>
               <% end %>
@@ -78,7 +80,7 @@
       </div><!--/row-->
 
       <footer id="footclan">
-        <p>&copy; Company 2014</p>
+        &copy; Statboy 2014
       </footer>
 
     </div> <!-- /container -->

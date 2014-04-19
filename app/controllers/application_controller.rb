@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def get_hosts
-  	@hosts ||= Host.all
+  	@ordered_hosts ||= Host.all.sort! { |a,b| b.votes <=> a.votes }
   end
 
 end
